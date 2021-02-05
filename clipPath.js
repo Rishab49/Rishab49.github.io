@@ -5,13 +5,13 @@
  var clickedState = false;
  var checkedState = false;
  var count = 0;
- var coordinateArray = ['M 0 0'];
+ var coordinateArray = [];
  var hideShowCounter = 0;
  var element;
  var curveCoordinates = [512, 350];
  var temp = [];
  var canResize = false;
-
+ var firstClick=true;
 
 
 
@@ -105,12 +105,12 @@
  // svg element event
 
  SVGELEMENT.addEventListener('click', function () {
-
-     var x1 = INPUTELEMENTX1.value;
+if(firstClick){
+    var x1 = INPUTELEMENTX1.value;
      var y1 = INPUTELEMENTY1.value;
-     var val = BUILTPATH.getAttribute('d');
-     val += checkedState ? ' Q' + ' ' + x1 + ' ' + y1 + ' ' + Xcoordinate + ' ' + Ycoordinate : ' L' + ' ' + Xcoordinate + ' ' + Ycoordinate;
-     coordinateArray.push(checkedState ? ' Q' + ' ' + x1 + ' ' + y1 + ' ' + Xcoordinate + ' ' + Ycoordinate : ' L' + ' ' + Xcoordinate + ' ' + Ycoordinate);
+     var val = "";
+     val += "M"+" "+ Xcoordinate+" "+Ycoordinate;
+     coordinateArray.push( "M"+" "+ Xcoordinate+" "+Ycoordinate);
      BUILTPATH.setAttribute('d', val);
 
 
@@ -119,7 +119,25 @@
 
          CreateAnchors();
      }
+     firstClick=false;
+}
+else{
+    var x1 = INPUTELEMENTX1.value;
+    var y1 = INPUTELEMENTY1.value;
+    var val = BUILTPATH.getAttribute('d');
+    val += checkedState ? ' Q' + ' ' + x1 + ' ' + y1 + ' ' + Xcoordinate + ' ' + Ycoordinate : ' L' + ' ' + Xcoordinate + ' ' + Ycoordinate;
+    coordinateArray.push(checkedState ? ' Q' + ' ' + x1 + ' ' + y1 + ' ' + Xcoordinate + ' ' + Ycoordinate : ' L' + ' ' + Xcoordinate + ' ' + Ycoordinate);
+    BUILTPATH.setAttribute('d', val);
 
+
+    if (checkedState) {
+        DestroyAnchors();
+
+        CreateAnchors();
+    }
+
+}
+     
  })
 
 
