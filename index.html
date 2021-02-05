@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create Custom SVG Clip Path flexibly and Instantly using your mouse cursor and get the path immediately ">
+    <meta name="keywords" content="SVG,clip path,clip-path,custom clip path,svg clip path ">
+    <script src="./clipPath.js" defer></script>
+    <title>Create Custom SVG Clip Path Instantly</title>
+    <meta desc>
+  <link rel="stylesheet" href="./clipPath.css">
+</head>
+
+<body>
+    <div class="coordinateBox"></div>
+    <div class="main-container">
+        <h1>BUILD CUSTOM SVG PATHS</h1>
+    </div>
+    <svg>
+        <defs>
+            <clipPath id="path" class="clipper">
+            </clipPath>
+        </defs>
+        <path d="M 0 0" stroke="white" stroke-width="2" fill="transparent" class="built-path" />
+
+    </svg>
+  
+    <div class="controller">
+
+
+
+        <div class="container">
+                curve:<input type="checkbox" class="curve-checkbox">
+                line:<input type="checkbox" class="line-checkbox" checked><br>
+            Starting Point:<input type="number" class="startX"><input type="number" class="startY">
+            <div class="curve-options">
+                <label for="input">Anchor X:</label>
+                <input type="number" class="inputXCoordinate1" value="512"><br>
+                <label for="input">Anchor Y:</label>
+                <input type="number" class="inputYCoordinate1" value="350">
+            </div>
+            <div class="code-to-copy">
+
+            </div>
+            <button type="button" class="generate">Generate</button>
+            <button type="button" class="back">Back</button>
+            <button type="button" class="reset">Reset</button>
+            <p>note : while using the curve use r on the keyboard to control the position of anchor of curve</p>
+
+        </div>
+        <div class="mover">
+            <img src="./clippath-move.png">
+        </div>
+        <div class="hide-show">
+            <img src="./clippath-minimize.png">
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <img src="./clippath-logo.png" class="site-logo">
+        <div class="text">
+          
+            Developed By RISHAB RAJ<br>
+            &#169 2021 RISHAB RAJ
+        </div>
+      <div class="contact">
+        Contact Me  
+      </div>
+    </div>
+    <script>
+
+       
+    </script>
+</body>
+
+</html>
