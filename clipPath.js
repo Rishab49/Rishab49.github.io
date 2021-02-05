@@ -178,7 +178,7 @@ else{
 
 
  GENERATE.addEventListener('click', function () {
-     document.getElementsByClassName('code-to-copy')[0].innerText=BUILTPATH.getAttribute('d');
+     document.getElementsByClassName('code-to-copy')[0].innerText="Path : "+BUILTPATH.getAttribute('d');
      BUILTPATH.setAttribute('stroke-width', "0");
      var points = BUILTPATH.getAttribute('d');
      element = document.createElementNS("http://www.w3.org/2000/svg", 'path');
